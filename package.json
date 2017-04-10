@@ -21,7 +21,7 @@
     "babel-plugin-istanbul": "^4.0.0",
     "babel-plugin-rewire": "^1.0.0",
     "babel-plugin-syntax-dynamic-import": "7.0.0-alpha.3",
-    "babel-preset-env": "v2.0.0-alpha.4",
+    "babel-preset-env": "v2.0.0-alpha.5",
     "babel-preset-stage-3": "7.0.0-alpha.7"
   },
   "devDependencies": {
