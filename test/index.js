@@ -15,7 +15,7 @@ describe('babel-preset-behance', function() {
         }],
         require('babel-preset-stage-3'),
       ],
-      plugins: [require('babel-plugin-syntax-dynamic-import')],
+      plugins: [],
     };
     expect(preset()).to.deep.equal(expected);
   });
@@ -35,7 +35,6 @@ describe('babel-preset-behance', function() {
           require('babel-preset-stage-3'),
         ],
         plugins: [
-          require('babel-plugin-syntax-dynamic-import'),
           require('babel-plugin-rewire'),
         ],
       };
@@ -57,7 +56,6 @@ describe('babel-preset-behance', function() {
           require('babel-preset-stage-3'),
         ],
         plugins: [
-          require('babel-plugin-syntax-dynamic-import'),
           require('babel-plugin-istanbul').default,
           require('babel-plugin-rewire'),
         ],
@@ -80,7 +78,6 @@ describe('babel-preset-behance', function() {
           require('babel-preset-stage-3'),
         ],
         plugins: [
-          require('babel-plugin-syntax-dynamic-import'),
           require('babel-plugin-istanbul').default,
           require('babel-plugin-rewire'),
         ],
@@ -103,7 +100,7 @@ describe('babel-preset-behance', function() {
           }],
           require('babel-preset-stage-3'),
         ],
-        plugins: [require('babel-plugin-syntax-dynamic-import')],
+        plugins: [],
       };
       expect(preset()).to.deep.equal(expected);
     });
@@ -123,7 +120,7 @@ describe('babel-preset-behance', function() {
           }],
           require('babel-preset-stage-3'),
         ],
-        plugins: [require('babel-plugin-syntax-dynamic-import')],
+        plugins: [],
       };
       expect(preset(null, { env: {} })).to.deep.equal(expected);
     });
@@ -152,7 +149,7 @@ describe('babel-preset-behance', function() {
           }],
           require('babel-preset-stage-3'),
         ],
-        plugins: [require('babel-plugin-syntax-dynamic-import')],
+        plugins: [],
       };
       expect(preset(null, { env: envOpts })).to.deep.equal(expected);
     });
@@ -182,7 +179,7 @@ describe('babel-preset-behance', function() {
           }],
           require('babel-preset-stage-3'),
         ],
-        plugins: [require('babel-plugin-syntax-dynamic-import')],
+        plugins: [],
       };
       expect(preset(null, { env: envOpts })).to.deep.equal(expected);
     });

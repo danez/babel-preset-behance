@@ -19,9 +19,7 @@ module.exports = function(context, opts) {
       [require('babel-preset-env'), envOpts],
       require('babel-preset-stage-3'),
     ],
-    plugins: [
-      require('babel-plugin-syntax-dynamic-import'),
-    ],
+    plugins: [],
   };
 
   if (env === 'test') {
