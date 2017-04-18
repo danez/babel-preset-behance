@@ -20,7 +20,7 @@
   "dependencies": {
     "babel-plugin-istanbul": "^4.0.0",
     "babel-plugin-rewire": "^1.0.0",
-    "babel-preset-env": "v2.0.0-alpha.6",
+    "babel-preset-env": "v2.0.0-alpha.7",
     "babel-preset-stage-3": "7.0.0-alpha.8"
   },
   "devDependencies": {

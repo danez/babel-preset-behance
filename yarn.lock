@@ -416,9 +416,9 @@ babel-plugin-transform-strict-mode@7.0.0-alpha.8:
   dependencies:
     babel-types "7.0.0-alpha.7"
 
-babel-preset-env@v2.0.0-alpha.6:
-  version "2.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-2.0.0-alpha.6.tgz#d8ddd8d9c6028bdd219e7621a41eef520a04483d"
+babel-preset-env@v2.0.0-alpha.7:
+  version "2.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-2.0.0-alpha.7.tgz#aa78a3ffe17eeb94de5d576cdfb6466ca8031fb0"
   dependencies:
     babel-plugin-check-es2015-constants "7.0.0-alpha.8"
     babel-plugin-syntax-trailing-function-commas "7.0.0-alpha.8"
