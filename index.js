@@ -1,7 +1,9 @@
 module.exports = function(context, opts) {
-  var env = process.env.BABEL_ENV || process.env.NODE_ENV;
+  const isTest = context.cache(() => (process.env.BABEL_ENV || process.env.NODE_ENV) === 'test');
+  const isCoverage = context.cache(() => !!process.env.COVERAGE);
+
   opts = opts || {};
-  var envOpts = opts.env || {};
+  const envOpts = opts.env || {};
 
   if (!envOpts.exclude) {
     envOpts.exclude = ['transform-regenerator'];
@@ -14,7 +16,7 @@ module.exports = function(context, opts) {
     envOpts.modules = false;
   }
 
-  var config = {
+  const config = {
     presets: [
       [require('babel-preset-env'), envOpts],
       require('babel-preset-stage-3'),
@@ -22,8 +24,8 @@ module.exports = function(context, opts) {
     plugins: [],
   };
 
-  if (env === 'test') {
-    if (process.env.COVERAGE) {
+  if (isTest) {
+    if (isCoverage) {
       config.plugins.push(require('babel-plugin-istanbul').default);
     }
     config.plugins.push(require('babel-plugin-rewire'));

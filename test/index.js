@@ -1,5 +1,9 @@
-var preset = require('..');
-var expect = require('chai').expect;
+const preset = require('..');
+const expect = require('chai').expect;
+
+const context = {
+  cache(arg) { return typeof arg === 'function' ? arg() : arg; },
+};
 
 describe('babel-preset-behance', function() {
   it('should default to "browser": true when no target is supplied', function() {
@@ -17,7 +21,7 @@ describe('babel-preset-behance', function() {
       ],
       plugins: [],
     };
-    expect(preset()).to.deep.equal(expected);
+    expect(preset(context)).to.deep.equal(expected);
   });
 
   describe('when process env is "test"', function() {
@@ -38,7 +42,7 @@ describe('babel-preset-behance', function() {
           require('babel-plugin-rewire'),
         ],
       };
-      expect(preset()).to.deep.equal(expected);
+      expect(preset(context)).to.deep.equal(expected);
     });
 
     it('should add babel-plugin-istanbul when COVERAGE=1', function() {
@@ -60,7 +64,7 @@ describe('babel-preset-behance', function() {
           require('babel-plugin-rewire'),
         ],
       };
-      expect(preset()).to.deep.equal(expected);
+      expect(preset(context)).to.deep.equal(expected);
     });
 
     it('should add babel-plugin-rewire in the correct order', function() {
@@ -82,7 +86,7 @@ describe('babel-preset-behance', function() {
           require('babel-plugin-rewire'),
         ],
       };
-      expect(preset()).to.deep.equal(expected);
+      expect(preset(context)).to.deep.equal(expected);
     });
   });
 
@@ -102,7 +106,7 @@ describe('babel-preset-behance', function() {
         ],
         plugins: [],
       };
-      expect(preset()).to.deep.equal(expected);
+      expect(preset(context)).to.deep.equal(expected);
     });
   });
 
@@ -122,7 +126,7 @@ describe('babel-preset-behance', function() {
         ],
         plugins: [],
       };
-      expect(preset(null, { env: {} })).to.deep.equal(expected);
+      expect(preset(context, { env: {} })).to.deep.equal(expected);
     });
 
     it('should add the env preset passing down exclude option', function() {
@@ -151,7 +155,7 @@ describe('babel-preset-behance', function() {
         ],
         plugins: [],
       };
-      expect(preset(null, { env: envOpts })).to.deep.equal(expected);
+      expect(preset(context, { env: envOpts })).to.deep.equal(expected);
     });
 
     it('should add the env preset passing down modules option as undefined', function() {
@@ -181,7 +185,7 @@ describe('babel-preset-behance', function() {
         ],
         plugins: [],
       };
-      expect(preset(null, { env: envOpts })).to.deep.equal(expected);
+      expect(preset(context, { env: envOpts })).to.deep.equal(expected);
     });
   });
 });
