@@ -36,21 +36,23 @@ require("babel-core").transform("code", {
 
 ## Options
 
-> We currently exclude `transform-regenerator` by default.
+* `env` (`{}` by default) - Pass down env options to [babel-preset-env](https://github.com/babel/babel-preset-env). See the [babel-preset-env docs](https://github.com/babel/babel-preset-env#options) for more info.
 
-* `browser` (`true` by default) - Enable browser specific presets and transforms.
-* `env` (undefined by default) - Pass down env options to [babel-preset-env](https://github.com/babel/babel-preset-env). See the [babel-preset-env docs](https://github.com/babel/babel-preset-env#options) for more info.
+> We currently exclude `transform-regenerator` by default.
+> `modules` is false by default
+> Stage 3 is included
+> `rewire` and `istanbul` in the `test` environment
 
 ```json
 {
-  "presets": ["behance", { "browser": true }]
-}
-{
-  "presets": ["behance", { "browser": false }]
+  "presets": ["behance", {
+    "env": {
+      "modules": "commonjs" // defaults to false
+    }
+  }]
 }
 {
   "presets": ["behance", {
-    "browser": false,
     "env": {
       "targets": {
         "chrome": 55
@@ -60,7 +62,6 @@ require("babel-core").transform("code", {
 }
 {
   "presets": ["behance", {
-    "browser": false,
     "env": {
       "targets": {
         "node": "current"
