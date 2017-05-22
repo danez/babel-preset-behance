@@ -47,7 +47,7 @@ require("babel-core").transform("code", {
 {
   "presets": ["behance", {
     "env": {
-      "modules": "commonjs" // defaults to false
+      "modules": "commonjs"
     }
   }]
 }
