@@ -3,7 +3,7 @@
 > Babel preset for Behance
 
 - We currently exclude `transform-regenerator` by default.
-- `modules` is false by default
+- `modules` is false by default (for webpack >= 2)
 - Stage 3 is included
 - `rewire` and `istanbul` are in the `test` environment
 
